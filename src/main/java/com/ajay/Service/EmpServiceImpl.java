@@ -38,7 +38,16 @@ public class EmpServiceImpl {
 		}
 	}
 		
-	
+	public String deleteEmp(Integer id) {
+		
+		dao.deleteById(id);
+		return "emp deleted..";
+		/*
+		 * Optional<EmpEntity> findById = dao.findById(id); if(findById.isPresent()) {
+		 * dao.delete(findById.get()); return "emp deleted.."; }else { return
+		 * "emp not present"; }
+		 */		
+	}
 
 	public List<EmpEntity> fetchAllEmp(){
 		List<EmpEntity> allEmp = dao.findAll();
